@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ZarTech - Katalog komponen PC dan spare part komputer.">
+<title>ZarTech — PC Components Store</title>
+<style>
+:root{--bg:#080d15;--panel:#111a27;--line:#253449;--blue:#3284ff;--text:#f4f7fc;--muted:#9eacc0}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+.wrap{width:min(1180px,92%);margin:auto}
+header{border-bottom:1px solid var(--line);background:#080d15}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:14px 0}
+.logo{font-size:27px;font-weight:800;letter-spacing:-1px}
+.logo span{color:var(--blue)}
+.logo small{display:block;font-size:9px;letter-spacing:3px;color:var(--muted);font-weight:400}
+.links{display:flex;gap:22px;font-size:14px;color:#d3dcec}
+.links a:hover{color:#64a4ff}
+.search{flex:1;max-width:360px}
+.search input{width:100%;padding:12px 15px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:white}
+.hero{padding:65px 0 55px;background:radial-gradient(ellipse at 85% 30%,#12366a 0,transparent 45%)}
+.eyebrow{font-size:12px;color:#65a7ff;letter-spacing:3px;font-weight:bold}
+h1{font-size:clamp(38px,6vw,64px);line-height:1.08;letter-spacing:-2px;max-width:700px;margin:18px 0}
+h1 span{color:#4c96ff}
+.intro{color:#b2bfd2;font-size:17px;line-height:1.8;max-width:620px}
+.btn{display:inline-block;border:0;border-radius:8px;padding:12px 18px;font-weight:bold;cursor:pointer}
+.primary{background:var(--blue);color:white}
+.secondary{border:1px solid #42516a;color:white;background:transparent}
+.actions{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+section{padding:35px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+h2{font-size:28px;margin:0 0 6px}
+.sub{color:var(--muted);font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.category{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;text-align:left;color:white;cursor:pointer}
+.category:hover,.category.active{border-color:var(--blue);background:#14233a}
+.category .emoji{font-size:28px;display:block;margin-bottom:12px}
+.category strong{display:block}
+.category small{display:block;color:var(--muted);margin-top:5px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.filters select,.filters input{background:var(--panel);color:white;border:1px solid var(--line);border-radius:8px;padding:11px}
+.filters input{flex:1;min-width:180px}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.product{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:linear-gradient(150deg,#111a27,#0b111a)}
+.product-art{height:155px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,#1d3452,#101925 68%);font-size:64px}
+.product-body{padding:17px}
+.brand{color:#78aaff;font-size:12px;margin-bottom:6px}
+.product h3{font-size:16px;margin:0 0 8px;min-height:40px}
+.spec{font-size:13px;color:var(--muted);min-height:36px}
+.price{font-size:18px;font-weight:bold;margin:15px 0}
+.note{font-size:12px;color:#e9bb6e}
+.empty{grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)}
+.about{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about p{color:var(--muted);max-width:720px;line-height:1.8}
+.contactbox{background:var(--panel);border:1px solid var(--line);padding:24px;border-radius:12px}
+footer{padding:26px 0;color:var(--muted);font-size:13px}
+@media(min-width:950px){.products{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:650px){.links{width:100%;gap:15px;flex-wrap:wrap}.search{max-width:none;width:100%;flex-basis:100%}.categories{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product-art{height:115px;font-size:48px}.product-body{padding:12px}.product h3{font-size:14px}.price{font-size:15px}}
+@media(max-width:390px){.products{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="#">Zar<span>Tech</span><small>PC COMPONENTS STORE</small></a>
+      <div class="links">
+        <a href="#">Beranda</a><a href="#produk">Produk</a>
+        <a href="#kategori">Kategori</a><a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </div>
+      <div class="search"><input id="searchTop" placeholder="Cari produk, misalnya RTX 4060..." aria-label="Cari produk"></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <p class="eyebrow">PC COMPONENTS STORE</p>
+      <h1>Bangun PC impianmu bersama <span>ZarTech.</span></h1>
+      <p class="intro">Temukan komponen PC untuk gaming, produktivitas, dan kebutuhan harian. Jelajahi katalog komponen dan bandingkan harga.</p>
+      <div class="actions">
+        <a class="btn primary" href="#produk">Jelajahi Produk ↗</a>
+        <a class="btn secondary" href="#kategori">Lihat Kategori</a>
+      </div>
+    </div>
+  </div>
+
+  <section id="kategori">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Kategori Komponen</h2><p class="sub">Temukan komponen yang kamu butuhkan.</p></div>
+      </div>
+      <div class="categories">
+        <button class="category" data-category="Prosesor"><span class="emoji">🧠</span><strong>Prosesor</strong><small>Intel / AMD</small></button>
+        <button class="category" data-category="Motherboard"><span class="emoji">🖥️</span><strong>Motherboard</strong><small>ATX / mATX / ITX</small></button>
+        <button class="category" data-category="VGA"><span class="emoji">🎮</span><strong>VGA / GPU</strong><small>NVIDIA / AMD</small></button>
+        <button class="category" data-category="RAM"><span class="emoji">💾</span><strong>RAM</strong><small>DDR4 / DDR5</small></button>
+        <button class="category" data-category="SSD"><span class="emoji">⚡</span><strong>SSD</strong><small>NVMe / SATA</small></button>
+        <button class="category" data-category="PSU"><span class="emoji">🔌</span><strong>PSU</strong><small>Catu daya</small></button>
+        <button class="category" data-category="Casing"><span class="emoji">🗄️</span><strong>Casing</strong><small>Gaming / Minimalis</small></button>
+        <button class="category" data-category="Aksesoris"><span class="emoji">🛠️</span><strong>Aksesoris</strong><small>Fan / Cooler</small></button>
+      </div>
+    </div>
+  </section>
+
+  <section id="produk">
+    <div class="wrap">
+      <div class="section-head">
+        <div><h2>Katalog Produk</h2><p class="sub">Harga di bawah adalah data contoh untuk demo.</p></div>
+      </div>
+      <div class="filters">
+        <input id="search" placeholder="Cari nama atau merek komponen...">
+        <select id="categoryFilter" aria-label="Filter kategori">
+          <option value="">Semua kategori</option>
+          <option>Prosesor</option><option>Motherboard</option><option>VGA</option>
+          <option>RAM</option><option>SSD</option><option>PSU</option>
+          <option>Casing</option><option>Aksesoris</option>
+        </select>
+        <select id="sort" aria-label="Urutkan harga">
+          <option value="default">Urutan default</option>
+          <option value="low">Harga terendah</option>
+          <option value="high">Harga tertinggi</option>
+        </select>
+      </div>
+      <div class="products" id="productList"></div>
+      <p class="sub" style="margin-top:18px">Catatan: nama, harga, dan ketersediaan produk merupakan contoh. Konfirmasi harga dan stok sebelum transaksi.</p>
+    </div>
+  </section>
+
+  <section id="tentang" class="about">
+    <div class="wrap">
+      <p class="eyebrow">TENTANG KAMI</p>
+      <h2>Kenali ZarTech</h2>
+      <p>ZarTech adalah konsep toko komponen PC yang berfokus pada katalog spare part komputer. Website ini merupakan tahap awal untuk menampilkan produk dan harga. Informasi stok, transaksi, dan pengiriman akan ditambahkan setelah operasional toko siap.</p>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <div class="wrap">
+      <p class="eyebrow">HUBUNGI KAMI</p>
+      <h2>Ada komponen yang dicari?</h2>
+      <p class="sub">Hubungi ZarTech untuk menanyakan produk atau ketersediaannya.</p>
+      <div class="contactbox" style="margin-top:20px">
+        <strong>ZarTech — PC Components Store</strong>
+        <p class="sub">Email: nazar@zartech.my.id</p>
+        <p class="sub">Website: zartech.my.id</p>
+        <p class="sub">Kontak pemesanan akan ditambahkan setelah kanal toko siap.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> ZarTech. Katalog demo, harga dapat berubah.</div></footer>
+
+<script>
+const products = [
+ {name:"AMD Ryzen 5 5600",brand:"AMD",category:"Prosesor",spec:"6 Core / 12 Thread · AM4",price:1899000,icon:"🧠"},
+ {name:"Intel Core i5-12400F",brand:"Intel",category:"Prosesor",spec:"6 Core / 12 Thread · LGA1700",price:2099000,icon:"🧠"},
+ {name:"MSI B550M PRO-VDH",brand:"MSI",category:"Motherboard",spec:"AM4 · mATX · DDR4",price:1749000,icon:"🖥️"},
+ {name:"GeForce RTX 4060 8GB",brand:"NVIDIA",category:"VGA",spec:"GPU gaming · 8GB",price:4999000,icon:"🎮"},
+ {name:"Corsair Vengeance 16GB",brand:"Corsair",category:"RAM",spec:"DDR4 · 3200MHz · 2x8GB",price:699000,icon:"💾"},
+ {name:"Samsung 970 EVO Plus 1TB",brand:"Samsung",category:"SSD",spec:"NVMe M.2 · 1TB",price:1299000,icon:"⚡"},
+ {name:"Kingston NV2 500GB",brand:"Kingston",category:"SSD",spec:"NVMe M.2 · 500GB",price:599000,icon:"⚡"},
+ {name:"Corsair CV650",brand:"Corsair",category:"PSU",spec:"650W · 80 Plus Bronze",price:899000,icon:"🔌"},
+ {name:"DeepCool Matrexx 40",brand:"DeepCool",category:"Casing",spec:"Micro-ATX · Airflow",price:649000,icon:"🗄️"},
+ {name:"DeepCool AK400",brand:"DeepCool",category:"Aksesoris",spec:"CPU air cooler",price:399000,icon:"🛠️"},
+ {name:"ASUS PRIME B760M-A",brand:"ASUS",category:"Motherboard",spec:"LGA1700 · DDR5",price:2199000,icon:"🖥️"},
+ {name:"Corsair Vengeance DDR5 32GB",brand:"Corsair",category:"RAM",spec:"DDR5 · 6000MHz · 2x16GB",price:1599000,icon:"💾"}
+];
+const rupiah = n => "Rp " + n.toLocaleString("id-ID");
+const list = document.getElementById("productList");
+const search = document.getElementById("search");
+const searchTop = document.getElementById("searchTop");
+const categoryFilter = document.getElementById("categoryFilter");
+const sort = document.getElementById("sort");
+
+function render(){
+ const q = search.value.trim().toLowerCase();
+ const category = categoryFilter.value;
+ let result = products.filter(p =>
+   (p.name+" "+p.brand+" "+p.category+" "+p.spec).toLowerCase().includes(q) &&
+   (!category || p.category===category)
+ );
+ if(sort.value==="low") result.sort((a,b)=>a.price-b.price);
+ if(sort.value==="high") result.sort((a,b)=>b.price-a.price);
+ list.innerHTML = "";
+ if(!result.length){
+   list.innerHTML='<p class="empty">Produk tidak ditemukan. Coba kata kunci lain.</p>';
+   return;
+ }
+ result.forEach(p=>{
+   const card=document.createElement("article");
+   card.className="product";
+   const art=document.createElement("div");
+   art.className="product-art";
+   art.textContent=p.icon;
+   const body=document.createElement("div");
+   body.className="product-body";
+   const brand=document.createElement("div");
+   brand.className="brand";
+   brand.textContent=p.brand+" · "+p.category;
+   const title=document.createElement("h3");
+   title.textContent=p.name;
+   const spec=document.createElement("p");
+   spec.className="spec";
+   spec.textContent=p.spec;
+   const price=document.createElement("div");
+   price.className="price";
+   price.textContent=rupiah(p.price);
+   const note=document.createElement("div");
+   note.className="note";
+   note.textContent="Harga contoh · cek ketersediaan";
+   body.append(brand,title,spec,price,note);
+   card.append(art,body);
+   list.append(card);
+ });
+}
+function syncSearch(value,source){
+ if(source!==search) search.value=value;
+ if(source!==searchTop) searchTop.value=value;
+ render();
+}
+search.addEventListener("input",()=>syncSearch(search.value,search));
+searchTop.addEventListener("input",()=>syncSearch(searchTop.value,searchTop));
+categoryFilter.addEventListener("change",render);
+sort.addEventListener("change",render);
+document.querySelectorAll(".category").forEach(button=>{
+ button.addEventListener("click",()=>{
+   categoryFilter.value=button.dataset.category;
+   document.querySelectorAll(".category").forEach(b=>b.classList.remove("active"));
+   button.classList.add("active");
+   render();
+   document.getElementById("produk").scrollIntoView({behavior:"smooth"});
+ });
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
